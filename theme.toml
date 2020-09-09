@@ -3,6 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/naro143/hugo-coder-portfolio/blob/master/LICENSE.md"
 description = "It is a theme to have you know yourself than developed based on hugo-coder"
 homepage = "https://github.com/naro143/hugo-coder-portfolio"
+
 tags = [
   "blog",
   "minimal",
@@ -12,6 +13,7 @@ tags = [
   "clean",
   "personal"
 ]
+
 features = [
   "analytics",
   "favicon",
@@ -19,6 +21,7 @@ features = [
   "single-column",
   "syntax-highlighting"
 ]
+
 min_version = "0.32"
 
 [author]

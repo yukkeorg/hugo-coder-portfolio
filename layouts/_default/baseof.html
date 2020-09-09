@@ -26,12 +26,13 @@
     {{ if or (.Site.Params.snsShare) (.Site.Params.faIcons) }}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     {{ end }}
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="{{ "css/normalize.min.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/style.min.css" | relURL }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 
     {{ if .Site.Params.rtl}}
-      <link rel="stylesheet" href="{{ "css/style-rtl.min.css" | relURL }}">
+      {{ $rtl_style := resources.Get "scss/style-rtl.scss" | toCSS | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ $rtl_style.Permalink }}">
     {{ end }}
 
     {{ range .Site.Params.custom_css }}
